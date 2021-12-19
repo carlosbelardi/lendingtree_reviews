@@ -1,0 +1,102 @@
+AllCops:
+  TargetRubyVersion: 2.5
+Documentation:
+  Enabled: false
+Layout/ArrayAlignment:
+  Enabled: true
+Layout/HashAlignment:
+  Enabled: true
+Layout/ParameterAlignment:
+  Enabled: true
+Layout/ElseAlignment:
+  Enabled: true
+Layout/IndentationWidth:
+  Enabled: true
+  IgnoredPatterns:
+    - '^\s*module'
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+Layout/TrailingWhitespace:
+  Enabled: true
+Layout/EmptyLines:
+  Enabled: true
+Layout/ExtraSpacing:
+  Enabled: true
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+Layout/DotPosition:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Layout/EndAlignment:
+  Enabled: false
+Style/RescueStandardError:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Layout/LineLength:
+  Max: 160
+Metrics/ClassLength:
+  Max: 150
+Metrics/MethodLength:
+  Max: 20
+Metrics/ModuleLength:
+  Max: 150
+Naming/VariableNumber:
+  Enabled: true
+  EnforcedStyle: 'snake_case'
+Style/GlobalVars:
+  Enabled: true
+  AllowedVariables:
+    - '$flipper'
+    - '$redis'
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+  FunctionalMethods:
+    - let
+    - let!
+    - subject
+    - watch
+    - set
+    - expose
+    - expose!
+Style/ConditionalAssignment:
+  EnforcedStyle: assign_inside_condition
+  IncludeTernaryExpressions: false
+Style/UnlessElse:
+  Enabled: true
+Style/HashSyntax:
+  EnforcedStyle: ruby19
+  SupportedStyles:
+    - ruby19
+    - ruby19_no_mixed_keys
+    - hash_rockets
+Style/TrailingBodyOnModule:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/IfUnlessModifier:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: '[]'
+Style/RegexpLiteral:
+  Enabled: false
+Style/EachWithObject:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
+    - "spec_automation/**/*"

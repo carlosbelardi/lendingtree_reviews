@@ -40,3 +40,7 @@ group :development do
   # gem "spring"
 end
 
+group :test, :development do
+  gem "byebug"
+  gem "rspec-rails"
+end
