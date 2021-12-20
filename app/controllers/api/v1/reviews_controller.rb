@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 class Api::V1::ReviewsController < ApplicationController
-  before_action :extract_params_url, :only => [:index]
+  before_action :extract_params_url, only: [:index]
 
   def index
     byebug
+    render_error('Invalid URL', status: :bad_request) and return unless @parsed_url.is_a?(URI::HTTP)
+
     http_response = grab_response(@url)
     review_response = extract_review_data(http_response.body)
     render_json(body: review_response)
@@ -13,6 +15,7 @@ class Api::V1::ReviewsController < ApplicationController
 
   def extract_params_url
     @url = params[:url]
+    @parsed_url = URI.parse(@url)
   end
 
   def extract_review_data(http_response)
@@ -23,14 +26,18 @@ class Api::V1::ReviewsController < ApplicationController
     page_reviews.each do |page_review|
       data << parse_review(page_review)
     end
-    byebug
     data
   end
 
   def grab_response(url)
-    byebug
-    response = HTTParty.get(url)
-    { error: 'URL extraction failed', error_code: response.code.to_s, status: :not_found } if response.code != 200
+    begin
+      byebug
+      response = HTTParty.get(url)
+      byebug
+      response
+    rescue => e
+      response = render_error(e.message, status: :bad_request)
+    end
     response
   end
 
@@ -59,7 +66,11 @@ class Api::V1::ReviewsController < ApplicationController
     return payload.key?(:error) unless payload.nil? || !payload.is_a?(Hash)
   end
 
+  def render_error(message, status: :internal_server_error)
+    render(json: { error: message }, status: status)
+  end
+
   def render_json(body: nil, status: :ok, error: nil)
-    render(json: { result: body, error: error }, status: status)
+    render(json: { reviews: body, error: error }, status: status)
   end
 end
