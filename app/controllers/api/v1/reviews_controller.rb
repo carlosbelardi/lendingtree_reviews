@@ -4,11 +4,17 @@ class Api::V1::ReviewsController < ApplicationController
 
   def index
     byebug
-    render_error('Invalid URL', status: :bad_request) and return unless @parsed_url.is_a?(URI::HTTP)
+    return render_error('URL is invalid or not for lendingtree.com', status: :bad_request) unless @parsed_url.is_a?(URI::HTTP) && @parsed_url.host == 'www.lendingtree.com'
 
     http_response = grab_response(@url)
-    review_response = extract_review_data(http_response.body)
-    render_json(body: review_response)
+    if http_response.nil?
+      return render_error('Page was not found', status: :not_found)
+    end
+
+    payload = extract_review_data(http_response.body)
+    return render_error(payload, status: :no_content) if payload.is_a?(String)
+
+    render_json(body: payload)
   end
 
   private
@@ -23,6 +29,8 @@ class Api::V1::ReviewsController < ApplicationController
     data = []
     page = Nokogiri::HTML(http_response)
     page_reviews = page.css('div.mainReviews')
+    return 'No reviews found for given URL' unless page_reviews.present?
+
     page_reviews.each do |page_review|
       data << parse_review(page_review)
     end
@@ -30,28 +38,25 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def grab_response(url)
-    begin
-      byebug
-      response = HTTParty.get(url)
-      byebug
-      response
-    rescue => e
-      response = render_error(e.message, status: :bad_request)
-    end
-    response
+    http_response = HTTParty.get(url)
+    return nil unless http_response.code == 200
+
+    http_response
   end
 
   def parse_date(review)
     new_date = review.css('div.reviewDetail').css('div.hideText').css('p.consumerReviewDate').text
-                     .gsub(/^Reviewed in/, '')
-                     .strip
+                    .gsub(/^Reviewed in/, '')
+                    .strip
+    return nil unless new_date.present?
+
     Date.parse(new_date).to_s
   end
 
   def parse_review(review)
     {
-      title: review.css('div.reviewDetail').css('p.reviewTitle').text,
-      details: review.css('div.reviewDetail').css('p.reviewText').text,
+      title: review.css('div.reviewDetail').css('p.reviewTitle').text.strip,
+      details: review.css('div.reviewDetail').css('p.reviewText').text.strip,
       stars: review.css('div.starReviews').css('div.rating-stars-wrapper').css('div.rating-stars-bottom')
                    .css('span.lt4-Star').length,
       author: review.css('div.reviewDetail').css('div.hideText').css('p.consumerName').children[0].text.strip,
@@ -62,15 +67,11 @@ class Api::V1::ReviewsController < ApplicationController
     }
   end
 
-  def payload_has_error?(payload)
-    return payload.key?(:error) unless payload.nil? || !payload.is_a?(Hash)
-  end
-
   def render_error(message, status: :internal_server_error)
     render(json: { error: message }, status: status)
   end
 
-  def render_json(body: nil, status: :ok, error: nil)
-    render(json: { reviews: body, error: error }, status: status)
+  def render_json(body: nil, status: :ok)
+    render(json: { reviews: body }, status: status)
   end
 end
