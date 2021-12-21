@@ -3,7 +3,6 @@ class Api::V1::ReviewsController < ApplicationController
   before_action :extract_params_url, only: [:index]
 
   def index
-    byebug
     return render_error('URL is invalid or not for lendingtree.com', status: :bad_request) unless @parsed_url.is_a?(URI::HTTP) && @parsed_url.host == 'www.lendingtree.com'
 
     http_response = grab_response(@url)
@@ -25,7 +24,6 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def extract_review_data(http_response)
-    byebug
     data = []
     page = Nokogiri::HTML(http_response)
     page_reviews = page.css('div.mainReviews')
