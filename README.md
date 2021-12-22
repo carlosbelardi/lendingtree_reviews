@@ -16,11 +16,11 @@ This should get all other necessary gems set up for you.
 
 ## Hitting the endpoint
 
-First made sure you're in the app's directory on your terminal, then boot up a Rails server
+First made sure you're in the app's directory on your terminal, then boot up a Rails server:
 ```
 rails s
 ```
-Once that's started, you can use your preferred method to hit the endpoint (I like to use Postman)
+Once that's started, you can use your preferred method to hit the endpoint (I like to use Postman):
 ```
 http://localhost:3000/api/v1/reviews?url=https://www.lendingtree.com/reviews/mortgage/triumph-lending/44068646
 ```
@@ -48,13 +48,13 @@ The response will tell you the following:
 * Date of review
 * Author's location
 
-Errors look like this
+Errors look like this:
 ```
 {
     "error": "URL is invalid or not for lendingtree.com"
 }
 ```
-You can also hit other pages of that same company's reviews by passing a modified URL such as
+You can also hit other pages of that same company's reviews by passing a modified URL such as:
 ```
 https://www.lendingtree.com/reviews/mortgage/pacific-beneficial-mortgage-company/44396611?sort=&pid=4
 ```
