@@ -46,6 +46,11 @@ Errors look like this
     "error": "URL is invalid or not for lendingtree.com"
 }
 ```
+You can also hit other pages of that same company's reviews by passing a modified URL such as
+```
+https://www.lendingtree.com/reviews/mortgage/pacific-beneficial-mortgage-company/44396611?sort=&pid=4
+```
+This will return all reviews on the fourth page of the company's reviews.
 
 ## Testing 
 

@@ -5,13 +5,16 @@ class Api::V1::ReviewsController < ApplicationController
   def index
     return render_error('URL is invalid or not for lendingtree.com', status: :bad_request) unless @parsed_url.is_a?(URI::HTTP) && @parsed_url.host == 'www.lendingtree.com'
 
-    http_response = grab_response(@url)
-    if http_response.nil?
-      return render_error('Page was not found', status: :not_found)
+    if @page_id.present?
+      http_response = grab_response(@url + "&pid=#{@page_id}")
+    else
+      http_response = grab_response(@url)
     end
 
+    return render_error('Page was not found', status: :not_found) if http_response.nil?
+
     payload = extract_review_data(http_response.body)
-    return render_error(payload, status: :no_content) if payload.is_a?(String)
+    return render_error(payload, status: :bad_request) if payload.is_a?(String)
 
     render_json(body: payload)
   end
@@ -21,6 +24,7 @@ class Api::V1::ReviewsController < ApplicationController
   def extract_params_url
     @url = params[:url]
     @parsed_url = URI.parse(@url)
+    @page_id = params[:pid]
   end
 
   def extract_review_data(http_response)
