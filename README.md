@@ -50,7 +50,7 @@ You can also hit other pages of that same company's reviews by passing a modifie
 ```
 https://www.lendingtree.com/reviews/mortgage/pacific-beneficial-mortgage-company/44396611?sort=&pid=4
 ```
-This will return all reviews on the fourth page of the company's reviews.
+This will return all reviews on the fourth page of the company's reviews. If you go too far and there are no reviews on that page, it'll return an error saying so.
 
 ## Testing 
 
