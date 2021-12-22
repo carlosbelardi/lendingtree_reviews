@@ -63,7 +63,7 @@ class Api::V1::ReviewsController < ApplicationController
                    .css('span.lt4-Star').length,
       author: review.css('div.reviewDetail').css('div.hideText').css('p.consumerName').children[0].text.strip,
       date: parse_date(review),
-      location: review.css('div.reviewDetail').css('div.hideText').css('p.consumerName').css('span').text
+      author_location: review.css('div.reviewDetail').css('div.hideText').css('p.consumerName').css('span').text
                       .gsub(/^from/, '')
                       .strip,
     }

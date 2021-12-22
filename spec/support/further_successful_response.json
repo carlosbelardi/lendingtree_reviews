@@ -6,7 +6,7 @@
             "stars": 5,
             "author": "Charlene",
             "date": "2021-11-01",
-            "location": "Terryville,  CT"
+            "author_location": "Terryville,  CT"
         },
         {
             "title": "It was a good experience.",
@@ -14,7 +14,7 @@
             "stars": 5,
             "author": "Jean",
             "date": "2021-11-01",
-            "location": "Staten Island,  NY"
+            "author_location": "Staten Island,  NY"
         },
         {
             "title": "Great Experience",
@@ -22,7 +22,7 @@
             "stars": 5,
             "author": "Nikita",
             "date": "2021-11-01",
-            "location": "Aiken,  SC"
+            "author_location": "Aiken,  SC"
         },
         {
             "title": "It was a great experience.",
@@ -30,7 +30,7 @@
             "stars": 5,
             "author": "Susan",
             "date": "2021-11-01",
-            "location": "Saratoga Springs,  NY"
+            "author_location": "Saratoga Springs,  NY"
         },
         {
             "title": "Best person to work with!",
@@ -38,7 +38,7 @@
             "stars": 5,
             "author": "Richard",
             "date": "2021-10-01",
-            "location": "Rocky Point,  NY"
+            "author_location": "Rocky Point,  NY"
         },
         {
             "title": "Fantastic",
@@ -46,7 +46,7 @@
             "stars": 5,
             "author": "Mike",
             "date": "2021-10-01",
-            "location": "Medina,  OH"
+            "author_location": "Medina,  OH"
         },
         {
             "title": "Professional and accommodating",
@@ -54,7 +54,7 @@
             "stars": 5,
             "author": "Jacqueline",
             "date": "2021-10-01",
-            "location": "Babylon,  NY"
+            "author_location": "Babylon,  NY"
         },
         {
             "title": "Exceptional experience",
@@ -62,7 +62,7 @@
             "stars": 5,
             "author": "Yuvetta",
             "date": "2021-10-01",
-            "location": "Henrico,  VA"
+            "author_location": "Henrico,  VA"
         },
         {
             "title": "Excellent Experience",
@@ -70,7 +70,7 @@
             "stars": 5,
             "author": "Deborah",
             "date": "2021-10-01",
-            "location": "Vernon,  AL"
+            "author_location": "Vernon,  AL"
         },
         {
             "title": "AWSOME!!!",
@@ -78,7 +78,7 @@
             "stars": 5,
             "author": "Karen",
             "date": "2021-10-01",
-            "location": "Hopewell Junction,  NY"
+            "author_location": "Hopewell Junction,  NY"
         }
     ]
 }

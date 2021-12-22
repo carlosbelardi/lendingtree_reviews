@@ -6,7 +6,7 @@
         "stars": 5,
         "author": "Christine",
         "date": "2021-12-01",
-        "location": "Seabrook,  NH"
+        "author_location": "Seabrook,  NH"
       },
       {
         "title": "Very easy process 5 star 🌟 plus 10",
@@ -14,7 +14,7 @@
         "stars": 5,
         "author": "Tammy",
         "date": "2021-12-01",
-        "location": "Stone Ridge,  NY"
+        "author_location": "Stone Ridge,  NY"
       },
       {
         "title": "Refinancing",
@@ -22,7 +22,7 @@
         "stars": 5,
         "author": "Alisa",
         "date": "2021-12-01",
-        "location": "Roanoke,  VA"
+        "author_location": "Roanoke,  VA"
       },
       {
         "title": "It was an excellent, seamless, transparent experience. I highly recommend working with Christina.",
@@ -30,7 +30,7 @@
         "stars": 5,
         "author": "Brandi",
         "date": "2021-12-01",
-        "location": "Cleveland,  OH"
+        "author_location": "Cleveland,  OH"
       },
       {
         "title": "Great experience.",
@@ -38,7 +38,7 @@
         "stars": 5,
         "author": "Jim",
         "date": "2021-12-01",
-        "location": "West Kill,  NY"
+        "author_location": "West Kill,  NY"
       },
       {
         "title": "Top notch service",
@@ -46,7 +46,7 @@
         "stars": 5,
         "author": "Dennis",
         "date": "2021-12-01",
-        "location": "Niagara Falls,  NY"
+        "author_location": "Niagara Falls,  NY"
       },
       {
         "title": "Amazing and Professional",
@@ -54,7 +54,7 @@
         "stars": 5,
         "author": "Leanne",
         "date": "2021-12-01",
-        "location": "Boston,  NY"
+        "author_location": "Boston,  NY"
       },
       {
         "title": "It was a pleasure working with Courtney.",
@@ -62,7 +62,7 @@
         "stars": 5,
         "author": "Larry R. Stevens",
         "date": "2021-11-01",
-        "location": "Millsboro,  DE"
+        "author_location": "Millsboro,  DE"
       },
       {
         "title": "Outstanding support through the entire process",
@@ -70,7 +70,7 @@
         "stars": 5,
         "author": "Joseph",
         "date": "2021-11-01",
-        "location": "Acton,  MA"
+        "author_location": "Acton,  MA"
       },
       {
         "title": "Exceptional Service",
@@ -78,7 +78,7 @@
         "stars": 5,
         "author": "Ron",
         "date": "2021-11-01",
-        "location": "Buffalo,  NY"
+        "author_location": "Buffalo,  NY"
       }
     ]
   }

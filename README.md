@@ -40,6 +40,14 @@ A successfull response should look like the following:
     ]
 }
 ```
+The response will tell you the following:
+* Review title
+* Review details
+* Stars given
+* Author of review
+* Date of review
+* Author's location
+
 Errors look like this
 ```
 {
