@@ -31,8 +31,8 @@ A successfull response should look like the following:
         {
             "title": "made the process easy and stress-free",
             "details": "Miguel was very knowledgeable. answered all my questions with understandable explanations. made the whole process less stressful than what i expected. responsiveness was immediate.",
-            "stars": 5,
             "author": "Rebecca",
+            "stars": 5,            
             "date": "2021-12-01",
             "location": "Dallas,  TX"
         },
