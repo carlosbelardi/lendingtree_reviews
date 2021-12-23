@@ -32,9 +32,17 @@ A successfull response should look like the following:
             "title": "made the process easy and stress-free",
             "details": "Miguel was very knowledgeable. answered all my questions with understandable explanations. made the whole process less stressful than what i expected. responsiveness was immediate.",
             "author": "Rebecca",
-            "stars": 5,            
+            "stars": 5,
             "date": "2021-12-01",
             "author_location": "Dallas,  TX"
+        },
+        {
+            "title": "All around excellence",
+            "details": "Although there are many choices when searching for lending, there will be no better loan officer than Colin Clark. Receptive, intelligent, with excellent follow up as well as readily available and accessible to any questions. He did not waste my time and because of his diligence and thoroughness our loan closed 8 days early. I cannot say enough about his work ethic or the product which he represents. Look no further if you are interested in a professional, well executed, and effort free loan process.",
+            "author": "Kristine",
+            "stars": 5,
+            "date": "2021-12-01",
+            "author_location": "Helotes,  TX"
         },
         (further reviews would be listed after this one, cutting it short for the sake of readability)
     ]
