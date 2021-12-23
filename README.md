@@ -20,7 +20,7 @@ First made sure you're in the app's directory on your terminal, then boot up a R
 ```
 rails s
 ```
-Once that's started, you can use your preferred method to hit the endpoint (I like to use Postman):
+Once that's started, you can use your preferred method to hit the endpoint with a GET request (I like to use Postman):
 ```
 http://localhost:3000/api/v1/reviews?url=https://www.lendingtree.com/reviews/mortgage/triumph-lending/44068646
 ```
