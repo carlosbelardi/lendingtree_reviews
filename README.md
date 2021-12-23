@@ -8,7 +8,7 @@ To get it up and running on your machine, (assuming you already have Ruby and Ra
 ```
 gem install bundler
 ```
-Once that's set up, run the following
+Once that's set up, run the following in the app's directory
 ```
 bundle install
 ```
