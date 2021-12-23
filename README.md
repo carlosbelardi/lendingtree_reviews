@@ -34,7 +34,7 @@ A successfull response should look like the following:
             "author": "Rebecca",
             "stars": 5,            
             "date": "2021-12-01",
-            "location": "Dallas,  TX"
+            "author_location": "Dallas,  TX"
         },
         (further reviews would be listed after this one, cutting it short for the sake of readability)
     ]
